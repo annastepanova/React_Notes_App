@@ -1,3 +1,5 @@
+import uuid from 'uuid'
+
 export default function reducer(state, action) {
   switch (action.type) {
     case 'SET_CURRENT_NOTE':
@@ -13,6 +15,16 @@ export default function reducer(state, action) {
         ...state,
         notes: deletedNotes
       }
+    case 'ADD_NOTE':
+      const newNote = {
+        id: uuid.v4(),
+        text: action.payload
+      }  
+    const addedNotes = [...state.notes, newNote]  
+    return {
+      ...state,
+      notes: addedNotes
+    }
     default: 
     return state;
   }

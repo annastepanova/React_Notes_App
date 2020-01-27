@@ -2,7 +2,7 @@ import React, {useState, useContext, useEffect, useRef} from 'react'
 import NotesContext from '../context'
 
 export default function AddNote() {
-  const {state, dispatch} = useContext(NotesContext)
+  const {dispatch} = useContext(NotesContext)
   const [value, setValue] = useState('')
   let ref = useRef()
   useEffect(() => {
