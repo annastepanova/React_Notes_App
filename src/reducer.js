@@ -30,7 +30,7 @@ export default function reducer(state, action) {
         ...state.currentNote,
         text: action.payload
       }
-    const updatedNoteIndex = state.note.findIndex(
+    const updatedNoteIndex = state.notes.findIndex(
       note => note.id === state.currentNote.id
     )  
     const updatedNotes = [
@@ -42,7 +42,7 @@ export default function reducer(state, action) {
       currentNote: null,
       notes: updatedNotes
     }
-    
+
     default: 
     return state;
   }
